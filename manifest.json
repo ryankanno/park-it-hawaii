@@ -1,0 +1,39 @@
+{
+  "name": "Park It Hawaii",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Extension to find all public parking stalls",
+  "browser_action": {
+    "default_icon": "images/dealios22gray.png"
+  },
+  "background": {
+    "scripts": ["jquery-2.1.4.min.js", "background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*","https://*/*"],
+    "js": ["jquery-2.1.4.min.js", "content_script.js"]
+  }],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com; object-src 'self'",
+  "web_accessible_resources": [
+    "map_viewer.html"
+  ],
+  "icons": { "16": "images/dealios16.png",
+             "48": "images/dealios48.png",
+            "128": "images/dealios128.png"},
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://meetup.com/*",
+    "https://meetup.com/*",
+    "http://www.meetup.com/*",
+    "https://www.meetup.com/*",
+    "http://eventbrite.com/*",
+    "https://eventbrite.com/*",
+    "http://www.eventbrite.com/*",
+    "https://www.eventbrite.com/*",
+    "http://frolichawaii.com/*",
+    "https://frolichawaii.com/*",
+    "http://www.frolichawaii.com/*",
+    "https://www.frolichawaii.com/*"
+  ]
+}
